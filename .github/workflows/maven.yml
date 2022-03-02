@@ -24,3 +24,18 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: ./mvnw package -B
+ 
+  push-image:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Docker Login
+        uses: docker/login-action@v1.14.1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.9.0
+        with:
+          push: true
