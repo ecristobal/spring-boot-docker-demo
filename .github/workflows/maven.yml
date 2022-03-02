@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build native image:
+  build-native-image:
 
     runs-on: ubuntu-latest
 
@@ -25,7 +25,7 @@ jobs:
       run: ./mvnw -B spring-boot:build-image -Pnative -Ddocker.registry.username=${{ secrets.DOCKER_HUB_USERNAME }} 
         -Ddocker.registry.password=${{ secrets.DOCKER_HUB_TOKEN }}
 
-  build JVM image:
+  build-JVM-image:
 
     runs-on: ubuntu-latest
 
