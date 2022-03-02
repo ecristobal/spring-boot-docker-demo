@@ -89,7 +89,7 @@
                     <docker>
                         <publishRegistry>
                             <username>${docker.registry.username}</username>
-                            <token>${docker.registry.token}</token>
+                            <password>${docker.registry.password}</password>
                             <url>https://hub.docker.com</url>
                         </publishRegistry>
                     </docker>
