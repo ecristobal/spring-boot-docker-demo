@@ -25,4 +25,4 @@ jobs:
     - name: Build with Maven
       run: ./mvnw package -B
     - name: Build Docker image & Push to Docker Hub
-      run: ./mvnw spring-boot:build-image -Ddocker.publishRegistry.username=${{ secrets.DOCKER_HUB_USERNAME }} -Ddocker.publishRegistry.token=${{ secrets.DOCKER_HUB_TOKEN }}
+      run: ./mvnw spring-boot:build-image -Ddocker.registry.username=${{ secrets.DOCKER_HUB_USERNAME }} -Ddocker.registry.token=${{ secrets.DOCKER_HUB_TOKEN }}

@@ -84,9 +84,15 @@
                         <env>
                             <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
                         </env>
-                        <name>docker.io/ecristobalr/${project.artifactId}:${project.version}</name>
                         <publish>true</publish>
                     </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>${docker.registry.username}</username>
+                            <token>${docker.registry.token}</token>
+                            <url>https://hub.docker.com</url>
+                        </publishRegistry>
+                    </docker>
                 </configuration>
             </plugin>
             <plugin>
