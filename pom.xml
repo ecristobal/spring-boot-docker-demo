@@ -85,6 +85,7 @@
                             <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
                         </env>
                         <publish>true</publish>
+                        <name>ecristobalr/${project.artifactId}:native</name>
                     </image>
                     <docker>
                         <publishRegistry>
