@@ -1,1 +1,8 @@
-
+spring:
+  application:
+    name: docker-demo
+  sleuth:
+    sampler:
+      probability: 1.0
+    propagation:
+      type: custom
