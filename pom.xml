@@ -127,7 +127,7 @@
                                     <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
                                 </env>
                                 <publish>true</publish>
-                                <name>ecristobalr/${project.artifactId}:native</name>
+                                <name>${docker.registry.username}/${project.artifactId}:native</name>
                             </image>
                         </configuration>
                     </plugin>
@@ -163,7 +163,7 @@
                         <configuration>
                             <image>
                                 <publish>true</publish>
-                                <name>ecristobalr/${project.artifactId}:jvm</name>
+                                <name>${docker.registry.username}/${project.artifactId}:jvm</name>
                             </image>
                         </configuration>
                     </plugin>
