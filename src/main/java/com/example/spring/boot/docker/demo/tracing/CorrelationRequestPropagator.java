@@ -1,4 +1,4 @@
-package com.example.spring.boot.docker.demo;
+package com.example.spring.boot.docker.demo.tracing;
 
 import brave.internal.codec.HexCodec;
 import brave.internal.propagation.StringPropagationAdapter;
@@ -9,10 +9,8 @@ import brave.propagation.TraceContext.Injector;
 import brave.propagation.TraceContextOrSamplingFlags;
 import java.util.Arrays;
 import java.util.List;
-import org.springframework.stereotype.Component;
 
-@Component
-public class CustomPropagator extends Propagation.Factory implements Propagation<String> {
+class CorrelationRequestPropagator extends Propagation.Factory implements Propagation<String> {
 
     private static final String TRACE_ID_HEADER_NAME = "X-Correlation-Id";
     private static final String SPAN_ID_HEADER_NAME = "X-Request-Id";
