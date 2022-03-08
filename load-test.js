@@ -13,7 +13,7 @@ export default function () {
             'X-Request-Id': 'feb77db016627d02'
         },
     };
-    const res = http.get('http://localhost:28080/factorial?number=50', params);
+    const res = http.get('http://localhost:18080/factorial?number=50', params);
     check(res,
         {
             'Status is 200': (r) => r.status === 200,
