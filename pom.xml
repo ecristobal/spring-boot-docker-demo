@@ -79,6 +79,9 @@
                             <url>https://hub.docker.com</url>
                         </publishRegistry>
                     </docker>
+                    <layers>
+                        <enabled>true</enabled>
+                    </layers>
                 </configuration>
             </plugin>
         </plugins>
