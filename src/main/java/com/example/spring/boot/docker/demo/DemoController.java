@@ -26,7 +26,7 @@ public class DemoController {
             factorial = factorial.multiply(BigInteger.valueOf(i));
             products.add(factorial);
         }
-        LOGGER.info("Factorial for number {} is {}", number, factorial);
+        LOGGER.info("Factorial for integer {} is {}", number, factorial);
         return Mono.just(factorial);
     }
 
