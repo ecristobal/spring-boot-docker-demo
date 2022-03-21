@@ -24,6 +24,13 @@ jobs:
     - name: Build Docker image & Push to Docker Hub
       run: ./mvnw -B spring-boot:build-image -Pnative -Ddocker.registry.username=${{ secrets.DOCKER_HUB_USERNAME }} 
         -Ddocker.registry.password=${{ secrets.DOCKER_HUB_TOKEN }}
+    - name: Cache Maven artifacts
+      uses: actions/cache@v3.0.0
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
 
   build-JVM-image:
 
@@ -42,3 +49,10 @@ jobs:
       - name: Build Docker image & Push to Docker Hub
         run: ./mvnw -B spring-boot:build-image -Pjvm -Ddocker.registry.username=${{ secrets.DOCKER_HUB_USERNAME }}
           -Ddocker.registry.password=${{ secrets.DOCKER_HUB_TOKEN }}
+      - name: Cache Maven artifacts
+        uses: actions/cache@v3.0.0
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
