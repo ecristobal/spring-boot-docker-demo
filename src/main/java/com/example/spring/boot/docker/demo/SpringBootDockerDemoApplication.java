@@ -1,10 +1,9 @@
 package com.example.spring.boot.docker.demo;
 
-import com.example.spring.boot.docker.demo.tracing.DistributedTracingConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackageClasses = {DistributedTracingConfiguration.class, DemoController.class})
+@SpringBootApplication(scanBasePackageClasses = {DemoController.class})
 public class SpringBootDockerDemoApplication {
 
     public static void main(String[] args) {
